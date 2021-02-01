@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+var classPunto_1 = require("./classPunto");
+var classTriangulo_1 = require("./classTriangulo");
+var punto1 = new classPunto_1.Punto(56, 27);
+var punto2 = new classPunto_1.Punto(-25, 41);
+var punto3 = new classPunto_1.Punto(1, 35);
+var triangulo1 = new classTriangulo_1.Triangulo(punto1, punto2, punto3);
+//console.log(punto1.toString());
+//console.log(punto1.distanciaAlOrigen());
+//console.log(punto1.calcularDistancia(new Punto(85,36)));
+//console.log(punto1.calcularCuadrante());
+//console.log(calcularMasCercano());
+console.log(triangulo1.calcularLongitudLados());
