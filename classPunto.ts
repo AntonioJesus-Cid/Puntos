@@ -50,10 +50,17 @@ export class Punto{
         return cuadrante;
     }
 
-    public calcularMasCercano(puntos : Punto[]): Punto {
-        let calculo:number[] = [];
-        for(let i = 0; i < puntos.length; i++) {
-            calculo += Math.sqrt(puntos.x^2 + puntos.y^2);
+    public calcularMasCercano(puntos:Punto[]):Punto{
+        let array = [];
+        let numero = 9999999;
+        let masCercano;
+        for(let i=0; i<puntos.length; ++i){
+            array.push(Math.sqrt(Math.pow((puntos[i].getX()-this.x),2)+Math.pow((puntos[i].getY()-this.y),2)))
+            if(array[i]<numero){
+                numero = array[i];
+                masCercano = puntos[i];
+            }
         }
+        return masCercano;
     }
 }

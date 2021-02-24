@@ -46,10 +46,17 @@ var Punto = /** @class */ (function () {
         return cuadrante;
     };
     Punto.prototype.calcularMasCercano = function (puntos) {
-        var calculo = [];
-        for (var i = 0; i < puntos.length; i++) {
-            calculo += Math.sqrt(puntos.x ^ 2 + puntos.y ^ 2);
+        var array = [];
+        var numero = 9999999;
+        var masCercano;
+        for (var i = 0; i < puntos.length; ++i) {
+            array.push(Math.sqrt(Math.pow((puntos[i].getX() - this.x), 2) + Math.pow((puntos[i].getY() - this.y), 2)));
+            if (array[i] < numero) {
+                numero = array[i];
+                masCercano = puntos[i];
+            }
         }
+        return masCercano;
     };
     return Punto;
 }());
